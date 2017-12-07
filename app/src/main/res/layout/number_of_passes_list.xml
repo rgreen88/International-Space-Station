@@ -7,9 +7,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_item_number"
-        style="@style/TextAppearance.AppCompat.Title"
-        android:fontFamily="monospace"
+        android:id="@+id/tv_num_of_passes"
         android:textSize="42sp"/>
 
 </FrameLayout>
