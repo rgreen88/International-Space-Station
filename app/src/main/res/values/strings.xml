@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ISS</string>
+    <string name="times_passed">Times passed displayed here</string>
 </resources>
