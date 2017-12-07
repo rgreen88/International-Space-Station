@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int NUM_ITEMS = 30;
 
     //instantiating RecyclerView and Adapter
-    private PassTimeAdapter mAdapter;
+    private TimesPassedAdapter mAdapter;
     private RecyclerView mNumberOfTimesPassed;
 
     @Override
@@ -26,8 +26,10 @@ public class MainActivity extends AppCompatActivity {
         //LinearLayoutManager for managing items in RecyclerView
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         mNumberOfTimesPassed.setLayoutManager(layoutManager);
-        //mNumberOfTimesPassed.setHasFixedSize(true); <--check later
+        mNumberOfTimesPassed.setHasFixedSize(true); //<--check later
 
+        mAdapter = new TimesPassedAdapter(NUM_ITEMS);
+        mNumberOfTimesPassed.setAdapter(mAdapter);
 
     }
 }
