@@ -7,7 +7,19 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/tv_latitude"
+        android:text="Latitude"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_longitude"
+        android:text="Longitude"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/tv_num_of_passes"
-        android:textSize="42sp"/>
+        android:text="Passes"/>
 
 </FrameLayout>
