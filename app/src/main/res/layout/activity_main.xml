@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="station"
+            type="com.example.android.iss.viewmodel.DataRetrieval"/>
 
     </data>
 
