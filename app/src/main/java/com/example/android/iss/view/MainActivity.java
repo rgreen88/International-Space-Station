@@ -11,6 +11,8 @@ import com.example.android.iss.databinding.ActivityMainBinding;
 import com.example.android.iss.model.Request;
 import com.example.android.iss.viewmodel.DataRetrieval;
 
+import static com.example.android.iss.BR.station;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final int NUM_ITEMS = 30;
@@ -29,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
         //setting data binding
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        DataRetrieval dataRetrieval = new DataRetrieval(new Request("latitude", "longitude",
-                "altitude", "passes", "datetime")); //need clearer understanding here
+        DataRetrieval dataRetrieval = new DataRetrieval(new Request(station.latitude, station.longitude,
+                "altitude", station.passes, "datetime")); //need clearer understanding here
         activityMainBinding.setStation(dataRetrieval);
 
         //binding rv
