@@ -7,6 +7,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.android.iss.R;
+import com.example.android.iss.data.MyHttpThread;
+import com.example.android.iss.data.util.Constants;
 import com.example.android.iss.databinding.ActivityMainBinding;
 import com.example.android.iss.model.Request;
 import com.example.android.iss.viewmodel.DataRetrieval;
@@ -47,5 +49,16 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new TimesPassedAdapter(NUM_ITEMS);
         mNumberOfTimesPassed.setAdapter(mAdapter);
 
+        setMyHttpThread();
+
     }
+
+    //http thread -- should this be in viewmodel?
+    public void setMyHttpThread() {
+        MyHttpThread myHttpThread = new MyHttpThread(Constants.URLS.BASE_URL);
+        Thread thread = new Thread(myHttpThread);
+        thread.start();
+    }
+
+    //add retrofit2 calls -- should this be in viewmodel as well?
 }
