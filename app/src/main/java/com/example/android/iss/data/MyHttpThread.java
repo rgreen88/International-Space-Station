@@ -10,13 +10,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
-import static android.content.ContentValues.TAG;
 
-/**
- * Created by Ryne on 12/26/2017.
- */
+public class MyHttpThread implements Runnable{
 
-public class MyHttpThread {
+    public static final String TAG = "ISS_http thread tag";
 
     String BaseURL; //ISS api
     HttpURLConnection urlConnection;
