@@ -8,6 +8,8 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.android.iss.R;
 import com.example.android.iss.databinding.ActivityMainBinding;
+import com.example.android.iss.model.Request;
+import com.example.android.iss.viewmodel.DataRetrieval;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
         //setting data binding
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        DataRetrieval dataRetrieval = new DataRetrieval(new Request("latitude", "longitude",
+                "altitude", "passes", "datetime")); //need clearer understanding here
+        activityMainBinding.setStation(dataRetrieval);
 
         //binding rv
         mNumberOfTimesPassed = findViewById(R.id.rv_recyclerView);
