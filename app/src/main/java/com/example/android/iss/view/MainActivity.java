@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.android.iss.R;
+import com.example.android.iss.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,6 +15,9 @@ public class MainActivity extends AppCompatActivity {
     //instantiating RecyclerView and Adapter
     private TimesPassedAdapter mAdapter;
     private RecyclerView mNumberOfTimesPassed;
+
+    //data binder
+    private ActivityMainBinding activityMainBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
