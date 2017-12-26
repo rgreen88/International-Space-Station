@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
         //setContentView(R.layout.activity_main);
 
         //setting data binding
-        activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        DataRetrieval dataRetrieval = new DataRetrieval(new Request(station.latitude, station.longitude,
-                "altitude", station.passes, "datetime")); //need clearer understanding here
+        activityMainBinding = DataBindingUtil.setContentView(this, R.layout.number_of_passes_list);
+        DataRetrieval dataRetrieval = new DataRetrieval(new Request(true, true,
+                "altitude", 3, "datetime")); //need clearer understanding here
         activityMainBinding.setStation(dataRetrieval);
 
         //binding rv
