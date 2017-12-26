@@ -11,7 +11,8 @@ import com.example.android.iss.databinding.ActivityMainBinding;
 import com.example.android.iss.model.Request;
 import com.example.android.iss.viewmodel.DataRetrieval;
 
-import static com.example.android.iss.BR.station;
+//import static com.example.android.iss.BR.station; <--was working earlier until inplementing retrofit2
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         //setContentView(R.layout.activity_main);
 
         //setting data binding
-        activityMainBinding = DataBindingUtil.setContentView(this, R.layout.number_of_passes_list);
+        activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         DataRetrieval dataRetrieval = new DataRetrieval(new Request(true, true,
                 "altitude", 3, "datetime")); //need clearer understanding here
         activityMainBinding.setStation(dataRetrieval);

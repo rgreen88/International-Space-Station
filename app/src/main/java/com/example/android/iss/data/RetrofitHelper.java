@@ -37,6 +37,12 @@ public class RetrofitHelper {
 
         @GET("{version}/59de8b64100000620042a9b6")
         Call<Request> getLatitude( @Path("lat") String version);
+
+        @GET("{version}/59de8b64100000620042a9b6")
+        Call<Request> getPasses( @Path("passes") String version);
+
+        @GET("{version}/59de8b64100000620042a9b6")
+        Call<Request> getLongitude( @Path("long") String version);
     }
 
 }
