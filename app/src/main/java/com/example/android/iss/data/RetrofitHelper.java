@@ -17,12 +17,12 @@ public class RetrofitHelper {
     public static final String BASE_URL = "http://api.open-notify.org/";
 
     public static Retrofit create() {
-        Retrofit retrofit = new Retrofit.Builder()
+        Retrofit retrofitPasses = new Retrofit.Builder()
                 .baseUrl( BASE_URL )
                 .addConverterFactory(GsonConverterFactory.create() )
                 .build();
 
-        return retrofit;
+        return retrofitPasses;
     }
 
 

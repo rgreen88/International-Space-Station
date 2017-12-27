@@ -49,15 +49,22 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new TimesPassedAdapter(NUM_ITEMS);
         mNumberOfTimesPassed.setAdapter(mAdapter);
 
-        setMyHttpThread();
+        setMyHttpThreadPasses();
+        setMyHttpThreadLocation();
 
     }
 
     //http thread -- should this be in viewmodel?
-    public void setMyHttpThread() {
-        MyHttpThread myHttpThread = new MyHttpThread(Constants.URLS.BASE_URL);
-        Thread thread = new Thread(myHttpThread);
-        thread.start();
+    public void setMyHttpThreadPasses() {
+        MyHttpThread myHttpThread = new MyHttpThread(Constants.URLS.BASE_URL_PASSES);
+        Thread threadPasses = new Thread(myHttpThread);
+        threadPasses.start();
+    }
+
+    public void setMyHttpThreadLocation() {
+        MyHttpThread myHttpThread = new MyHttpThread(Constants.URLS.BASE_URL_LOCATION);
+        Thread threadLocation = new Thread(myHttpThread);
+        threadLocation.start();
     }
 
     //add retrofit2 calls -- should this be in viewmodel as well?
