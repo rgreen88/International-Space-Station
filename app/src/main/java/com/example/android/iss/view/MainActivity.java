@@ -8,12 +8,13 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.android.iss.R;
 import com.example.android.iss.data.MyHttpThread;
+import com.example.android.iss.data.RetrofitHelper;
 import com.example.android.iss.data.util.Constants;
 import com.example.android.iss.databinding.ActivityMainBinding;
 import com.example.android.iss.model.Request;
 import com.example.android.iss.viewmodel.DataRetrieval;
 
-//import static com.example.android.iss.BR.station; <--was working earlier until inplementing retrofit2
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -49,23 +50,12 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new TimesPassedAdapter(NUM_ITEMS);
         mNumberOfTimesPassed.setAdapter(mAdapter);
 
-        setMyHttpThreadPasses();
-        setMyHttpThreadLocation();
+        DataRetrieval.setMyHttpThreadPasses();
+        DataRetrieval.setMyHttpThreadLocation();
+
 
     }
 
-    //http thread -- should this be in viewmodel?
-    public void setMyHttpThreadPasses() {
-        MyHttpThread myHttpThread = new MyHttpThread(Constants.URLS.BASE_URL_PASSES);
-        Thread threadPasses = new Thread(myHttpThread);
-        threadPasses.start();
-    }
 
-    public void setMyHttpThreadLocation() {
-        MyHttpThread myHttpThread = new MyHttpThread(Constants.URLS.BASE_URL_LOCATION);
-        Thread threadLocation = new Thread(myHttpThread);
-        threadLocation.start();
-    }
 
-    //add retrofit2 calls -- should this be in viewmodel as well?
 }

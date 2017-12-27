@@ -2,6 +2,9 @@ package com.example.android.iss.viewmodel;
 
 import android.widget.TextView;
 
+import com.example.android.iss.data.MyHttpThread;
+import com.example.android.iss.data.RetrofitHelper;
+import com.example.android.iss.data.util.Constants;
 import com.example.android.iss.model.Request;
 
 
@@ -49,4 +52,20 @@ public class DataRetrieval {
     public void setPasses(Integer passes) {
         this.passes = passes;
     }
+
+    //http thread -- should these methods below be in viewmodel?
+    public static void setMyHttpThreadPasses() {
+        MyHttpThread myHttpThread = new MyHttpThread(Constants.URLS.BASE_URL_PASSES);
+        Thread threadPasses = new Thread(myHttpThread);
+        threadPasses.start();
+    }
+
+    public static void setMyHttpThreadLocation() {
+        MyHttpThread myHttpThread = new MyHttpThread(Constants.URLS.BASE_URL_LOCATION);
+        Thread threadLocation = new Thread(myHttpThread);
+        threadLocation.start();
+    }
+
+    //add retrofit2 calls -- should this be in viewmodel as well?
+
 }

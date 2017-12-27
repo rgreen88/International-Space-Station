@@ -13,9 +13,9 @@ import java.util.Scanner;
 
 public class MyHttpThread implements Runnable{
 
-    public static final String TAG = "ISS_http thread tag";
+    public static final String TAG = "ISS http thread tag";
 
-    String BaseURL; //ISS api
+    String BaseURL; //ISS base api url
     HttpURLConnection urlConnection;
 
     public MyHttpThread(String BaseURL) {
