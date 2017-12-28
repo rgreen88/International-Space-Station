@@ -36,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
         //setting data binding
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         DataRetrieval dataRetrieval = new DataRetrieval(new Request(true, true,
-                "altitude", 3, "datetime")); //need clearer understanding here
+                "altitude", 3, "datetime"));
+        //TODO: need clearer understanding here with lat and long represented as boolean...
         activityMainBinding.setStation(dataRetrieval);
 
         //binding rv

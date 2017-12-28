@@ -8,10 +8,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 
-/**
- * Created by Ryne on 12/26/2017.
- */
-
 public class RetrofitHelper {
 
     public static final String BASE_URL = "http://api.open-notify.org/";
