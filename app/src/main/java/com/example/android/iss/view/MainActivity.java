@@ -7,9 +7,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.android.iss.R;
-import com.example.android.iss.data.MyHttpThread;
+
 import com.example.android.iss.data.RetrofitHelper;
-import com.example.android.iss.data.util.Constants;
 import com.example.android.iss.databinding.ActivityMainBinding;
 import com.example.android.iss.model.Request;
 import com.example.android.iss.viewmodel.DataRetrieval;
@@ -27,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
 
     //data binder
     private ActivityMainBinding activityMainBinding;
+
+    //placeholders
+    String passes, latitude, longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +53,15 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new TimesPassedAdapter(NUM_ITEMS);
         mNumberOfTimesPassed.setAdapter(mAdapter);
 
+        //Station Passes
         DataRetrieval.setMyHttpThreadPasses();
+        RetrofitHelper.getRequestPasses(passes);
+
+        //Lat-Long
         DataRetrieval.setMyHttpThreadLocation();
+        RetrofitHelper.getRequestLat(latitude);
+        RetrofitHelper.getRequestLong(longitude);
+
 
 
     }

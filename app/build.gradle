@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 
+
 android {
+
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.example.android.iss"
@@ -9,6 +11,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
@@ -17,7 +20,10 @@ android {
         }
     }
 
+
+
     dataBinding {
+
         enabled = true
     }
 }

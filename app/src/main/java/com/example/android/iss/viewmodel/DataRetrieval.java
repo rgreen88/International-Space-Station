@@ -55,13 +55,13 @@ public class DataRetrieval {
 
     //http thread -- should these methods below be in viewmodel?
     public static void setMyHttpThreadPasses() {
-        MyHttpThread myHttpThread = new MyHttpThread(Constants.URLS.BASE_URL_PASSES);
+        MyHttpThread myHttpThread = new MyHttpThread(Constants.URLS.BASE_URL);
         Thread threadPasses = new Thread(myHttpThread);
         threadPasses.start();
     }
 
     public static void setMyHttpThreadLocation() {
-        MyHttpThread myHttpThread = new MyHttpThread(Constants.URLS.BASE_URL_LOCATION);
+        MyHttpThread myHttpThread = new MyHttpThread(Constants.URLS.BASE_URL);
         Thread threadLocation = new Thread(myHttpThread);
         threadLocation.start();
     }

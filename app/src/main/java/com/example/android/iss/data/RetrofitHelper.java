@@ -22,22 +22,36 @@ public class RetrofitHelper {
     }
 
 
-    public static Call<Request> getRequest(String version ) {
+    public static Call<Request> getRequestLat(String version ) {
         Retrofit retrofit = create();
         RetrofitService service = retrofit.create( RetrofitService.class );
 
         return service.getLatitude( version );
     }
 
+    public static Call<Request> getRequestLong(String version ) {
+        Retrofit retrofit = create();
+        RetrofitService service = retrofit.create( RetrofitService.class );
+
+        return service.getLongitude( version );
+    }
+
+    public static Call<Request> getRequestPasses(String version ) {
+        Retrofit retrofit = create();
+        RetrofitService service = retrofit.create( RetrofitService.class );
+
+        return service.getPasses( version );
+    }
+
     public interface RetrofitService {
 
-        @GET("{version}/59de8b64100000620042a9b6")
+        @GET("iss-pass.json?lat=LAT&lon=LON")
         Call<Request> getLatitude( @Path("lat") String version);
 
-        @GET("{version}/59de8b64100000620042a9b6")
+        @GET("iss-now.json")
         Call<Request> getPasses( @Path("passes") String version);
 
-        @GET("{version}/59de8b64100000620042a9b6")
+        @GET("iss-pass.json?lat=LAT&lon=LON")
         Call<Request> getLongitude( @Path("long") String version);
     }
 
